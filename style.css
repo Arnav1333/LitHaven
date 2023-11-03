@@ -6,9 +6,16 @@
     font-family: 'Sometype Mono', monospace;
     text-decoration: none;
 }
+
+html{
+    scroll-behavior: smooth;
+}
 body{
     background:#fff;
     height:100vh;
+}
+.mobile-menu {
+    display: none;
 }
 li a button{
     
@@ -28,6 +35,7 @@ header{
     justify-content: space-around;
     align-items: center;
     background-color: #FFEA20;
+    text-decoration: none;
     
 }
 .logo{
@@ -39,31 +47,41 @@ header{
 }
 .nav-link{
     list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 .nav-link li{
     display: inline-block;
     padding: 0 30px;
     color:#000;
     cursor: pointer;
+    text-decoration: none;
 }
 .nav-link li:hover{
     color:#3C486B;
+    
     
 }
 main{
     display: flex;
     justify-content:space-around;
     align-items: center;
+    
 }
 .content-right img{
     height:30rem;
     max-width: 570px;
     padding: 15px 0;
     border:none;
-    border-radius: 40px;    
+    border-radius: 40px;  
+     
 }
 .content-left{
     width:45%;
+    transition: width 2s;
 }
 .content-left .shop-button{
     padding: 9px 25px;
@@ -81,6 +99,7 @@ main{
 }
 .content-left p{ 
     line-height:1.5;
+    
 }
 .content-left h2{
     color:#3C486B;
@@ -116,8 +135,8 @@ main{
 .abt-cards {
     display: flex;
     padding-top: 20px;
-    /* Add margin between the cards */
     margin: 10px;
+ 
 }
 
 .abt-first {
@@ -142,9 +161,6 @@ main{
 
 }
 
-.books{
-    background: #FFEA20;
-}
 .books-heading{
     text-align: center;
     padding: 50px;
@@ -160,21 +176,21 @@ main{
     font-size: x-large;
 }
 .dark-mode{
-    background-color: #333; /* Background color for the dark button */
-    color: #fff; /* Text color for the dark button */
-    padding: 5px 10px; /* Adjust padding for a smaller button */
-    border: none; /* Remove button border if desired */
-    border-radius: 5px; /* Add rounded corners */
-    cursor: pointer; /* Change cursor on hover */
+    background-color: #333; 
+    color: #fff; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
     text-align: center;
     text-decoration: none;
-    font-size: 10px; /* Reduce font size for a smaller button */
+    font-size: 10px; 
     display: inline-block;
     
 }
 .dark{
     background-color: #222;
-    color: #e6e6e6;
+    color: #c2c1c1;
 }
 .footer {
     background-color: #333; /* Background color for the footer */
@@ -193,6 +209,47 @@ main{
 }
 
 
+.contact-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    
+}
+.contact-submit{
+    padding: 9px 25px;
+    color: #FFEA20;
+    background-color: #000;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    margin: 10px 0px 40px 0;
+    
+}
+
+
+
+@keyframes fade {
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1
+    }
+    0%{
+        opacity:0
+    }
+    50%{
+        opacity: 1;
+        transform:translate()
+    }
+    100%{
+
+    }
+    
+}
+
 @media (max-width:680px){
     @import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@500&display=swap');
 * {
@@ -202,6 +259,34 @@ main{
     font-family: 'Sometype Mono', monospace;
     text-decoration: none;
 }
+.mobile-menu {
+    display: block;
+
+}
+.mobile-menu .hamburger{
+    background: none;
+    border:none;
+    color: #333;
+}
+.nav-link {
+    display: none;
+    flex-direction: column;
+    background-color:#8c7e04;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    
+}
+
+.nav-link.active {
+    display: flex;
+}
+
+.nav-link li {
+    margin: 15px 0;
+}
+
 
 body {
     background: #fff;
@@ -225,43 +310,30 @@ header {
     justify-content: space-around;
     align-items: center;
     background-color: #FFEA20;
-    max-width: 1000px; /* Set a maximum width for the header */
-    margin: 0 auto; /* Center the header within the page */
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
-.nav-link {
-    list-style: none;
-}
 
-.nav-link li {
-    display: inline-block;
-    padding: 0 15px; /* Reduce padding for smaller screens */
-    color: #000;
-    cursor: pointer;
-}
-
-.nav-link li a:hover {
-    color: #3C486B;
-}
 
 main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: column; /* Stack content in a column for smaller screens */
-    text-align: center; /* Center-align text for smaller screens */
+    flex-direction: column; 
+    text-align: center; 
     padding-top: 15px;
 }
 
 .content-right img {
-    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    max-width: 100%; 
     padding: 15px 0;
     border: none;
     border-radius: 40px;
 }
 
 .content-left {
-    width: 100%; /* Take up the full width for smaller screens */
+    width: 100%; 
 }
 
 .content-left .shop-button {
@@ -272,7 +344,7 @@ main {
     border-radius: 30px;
     border: none;
     margin: 10px 0 0 0;
-    width: 80%; /* Full width for smaller screens */
+    width: 80%; 
 }
 
 .content-left .shop-button:hover {
@@ -292,12 +364,12 @@ main {
 .header-button {
     display: flex;
     padding-top: 10px;
-    flex-direction: column; /* Stack buttons in a column for smaller screens */
-    align-items: center; /* Center-align buttons for smaller screens */
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .contact-button {
-    position: static; /* Remove absolute positioning for smaller screens */
+    position: static; 
     margin: 10px 0 0 0;
     color: #FFEA20;
     background-color: #3C486B;
@@ -310,9 +382,8 @@ main {
 }
 
 
-/* Media Queries for iPhone Screens */
     .nav-link li {
-        padding: 0 10px; /* Further reduce padding for narrower screens */
+        padding: 0 10px; 
     }
     .abt-heading {
         text-align: center;
@@ -352,18 +423,42 @@ main {
     
     }
     .books-heading {
-        padding: 10px; /* Further reduce padding for smaller screens */
+        padding: 10px; 
     }
 
     .books-content1 {
-        margin: 5px; /* Further increase margin for spacing */
+        margin: 5px; 
         
         
     }
 
     .books-content1 p {
-        font-size: small; /* Adjust font size for smaller screens */
+        font-size: small; 
     }
+    
+    .contact-card {
+        flex-direction: column;
+        padding: 20px; 
+    }
+    
+    .contact-form {
+        width: 100%; 
+    }
+    
+    .contact-img {
+        margin-top: 20px; 
+    }
+    
+    .contact-submit {
+        width: 100%; 
+        padding: 10px;
+    }
+    
+        
+    label, input, textarea {
+        font-size: 16px;
+    }
+    
 }
 
 
