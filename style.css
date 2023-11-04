@@ -69,8 +69,22 @@ main{
     display: flex;
     justify-content:space-around;
     align-items: center;
+    animation: transition 2s ease;
     
 }
+
+    
+
+@keyframes transition {
+    from {
+      opacity: 0;
+      transform: rotateX(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
 .content-right img{
     height:30rem;
     max-width: 570px;
@@ -136,8 +150,22 @@ main{
     display: flex;
     padding-top: 20px;
     margin: 10px;
+
  
 }
+.abt-cards:hover{
+    animation: transition 3s ease;
+}
+@keyframes transition {
+    from {
+      opacity: 0;
+      transform: rotateX(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
 
 .abt-first {
     background: #FFEA20;
@@ -170,6 +198,11 @@ main{
     display: flex;
     justify-content:space-around;
     align-items: center;
+
+}
+.books-content1:hover{
+    transform: translate(3%);
+    transition: transform 1s;
 }
 
 .books-content1 p{
@@ -208,13 +241,20 @@ main{
     text-decoration: underline;
 }
 
-
+.contact-heading{
+    text-align: center;
+    padding-top:30px;
+    color: #3C486B;
+}
 .contact-card{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 50px;
     
+}
+.contact-card:hover{
+    animation:transition 2s ease;
 }
 .contact-submit{
     padding: 9px 25px;
